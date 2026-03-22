@@ -1,0 +1,26 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Numb",
+      "artist": "Linkin Park",
+      "genre": "Rock",
+      "duration": 185
+    },
+    {
+      "title": "Od ljubavi jace",
+      "artist": "Nedeljko Bajic Baja",
+      "genre": "Zabavno",
+      "duration": 205,
+      "id": "xn2COAc1Z9E"
+    },
+    {
+      "title": "Mockingbird",
+      "artist": "Eminem",
+      "genre": "Rap",
+      "duration": 190,
+      "id": "tf0Fo1YCl8k"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
