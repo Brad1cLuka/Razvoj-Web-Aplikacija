@@ -4,7 +4,7 @@ import { map, debounceTime, switchMap, take, takeUntil } from "rxjs/operators"
 import { getSongs } from "../services/api.js"
 import { renderSongs } from "../ui/renderSongs.js"
 
-export const createSearchStream = (renderSongs) => {
+export const createSearchStream = (renderSongs, getActivePlaylistId) => {
 
   const searchInput = document.getElementById("search")
 
@@ -18,9 +18,12 @@ export const createSearchStream = (renderSongs) => {
 
         const songs = await getSongs()
 
-        return songs.filter(song =>
-          song.title.toLowerCase().includes(searchValue)
-        )
+        const activeId = getActivePlaylistId()
+
+            return songs.filter(song =>
+                song.title.toLowerCase().includes(searchValue) &&
+                song.playlistId === activeId
+            )
 
       })
     )
@@ -40,7 +43,7 @@ export const createAddSongStream = (addSongHandler) => {
     const click$ = fromEvent(button, "click")
     const enter$ = fromEvent(titleInput, "keyup")
 
-    marge(click$, enter$).subscribe(event => {
+    merge(click$, enter$).subscribe(event => {
         
         if(event.type === "click" || event.key === "Enter") {
             addSongHanlder()

@@ -1,25 +1,41 @@
 {
-  "songs": [
+  "playlists": [
     {
       "id": "1",
+      "name": "Workout"
+    },
+    {
+      "id": "2",
+      "name": "Chill"
+    }
+  ],
+  "songs": [
+    {
       "title": "Numb",
-      "artist": "Linkin Park",
+      "artist": "Linkin Park ",
       "genre": "Rock",
-      "duration": 185
+      "duration": 185,
+      "playlistId": 1,
+      "favorite": false,
+      "id": "1"
     },
     {
       "title": "Od ljubavi jace",
       "artist": "Nedeljko Bajic Baja",
       "genre": "Zabavno",
       "duration": 205,
-      "id": "xn2COAc1Z9E"
+      "id": "xn2COAc1Z9E",
+      "favorite": true,
+      "playlistId": 1
     },
     {
       "title": "Mockingbird",
       "artist": "Eminem",
       "genre": "Rap",
       "duration": 190,
-      "id": "tf0Fo1YCl8k"
+      "id": "tf0Fo1YCl8k",
+      "favorite": false,
+      "playlistId": 2
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

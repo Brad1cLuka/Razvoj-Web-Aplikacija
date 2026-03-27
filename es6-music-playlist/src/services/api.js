@@ -20,3 +20,18 @@ export const deleteSong = async (id) => {
         method: "DELETE"
     })
 }
+export const updateSong = async (id, updatedSong) => {
+
+  await fetch(`http://localhost:3000/songs/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(updatedSong)
+  })
+
+}
+export const getPlaylists = async () => {
+  const res = await fetch("http://localhost:3000/playlists")
+  return res.json()
+}

@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
     <title>Music Playlist</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Music Playlist</h1>
-    <input id="search" placeholder="Search song">
+    <div class="container">
+        
+        <h1>Music Playlist</h1>
+        <select id="playlistSelect"></select>
+        <select id="genreFilter">
+            <option value="all">All genres</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Rap">Rap</option>
+        </select>
+        <input id="search" placeholder="Search song">
 
-    <h2>Add Song</h2>
+        <h2>Add Song</h2>
 
-    <input id="title" placeholder="Title">
-    <input id="artist" placeholder="Artist">
-    <input id="genre" placeholder="Genre">
-    <input id="duration" placeholder="Duration (seconds)">
+        <input id="title" placeholder="Title">
+        <input id="artist" placeholder="Artist">
+        <input id="genre" placeholder="Genre">
+        <input id="duration" placeholder="Duration (seconds)">
 
-    <button id="addSong">Add Song</button>
-    <button id="stopSearch">Stop Search</button>
+        <button id="addSong">Add Song</button>
+        <button id="stopSearch">Stop Search</button>
 
 
 
-    <ul id="songList"></ul>
-
+        <ul id="songList"></ul>
+    </div>
     <script src="/main.js"></script>
     
 </body>
