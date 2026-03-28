@@ -1,8 +1,0 @@
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-app',
-  templateUrl: './app.html',
-  styleUrls: ['./app.scss'],
-})
-export class App {}
