@@ -1,0 +1,40 @@
+.cart{
+    padding: 30px;
+
+    h2{ 
+        margin-bottom: 20px;
+    }
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-items: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+
+    img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .info{
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    button{
+        background: red;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
+.total{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}

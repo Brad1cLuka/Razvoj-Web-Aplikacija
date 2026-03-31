@@ -1,0 +1,24 @@
+<div class="cart">
+    <h2>Your cart</h2>
+
+    <div *ngIf="(products$ | async) as products">
+
+
+        <div *ngIf="products.length ===0">
+            <p>Cart is empty</p>
+        </div>
+
+        <div class="cart-item" *ngFor="let product of products">
+            <img [src]="product.image" alt="{{product.name}}">
+            <div class="info">
+                <h3>{{product.name}}</h3>
+                <p>${{product.price}}</p>
+            </div>
+            <button (click)="remove(product.id)">Remove</button>
+        </div>
+
+        <div class="total" *ngIf="products.length > 0">
+            Total: ${{ getTotal(products) }}
+        </div>
+    </div>
+</div>

@@ -7,14 +7,4 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 
-bootstrapApplication(App, {
-  providers: [
-    provideStore({ cart: cartReducer}),
-    provideStoreDevtools({
-      maxAge: 25,
-      logOnly: false
-    }),
-    provideRouter(routes)
-  ]
-
-});
+bootstrapApplication(App, appConfig);
