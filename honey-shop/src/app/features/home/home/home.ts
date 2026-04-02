@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ProductList } from '../../products/product-list/product-list';
 import { RouterLink } from '@angular/router';
+import { FeatureSection } from '../../feature-section/feature-section';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductList, RouterLink],
+  imports: [FeatureSection, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

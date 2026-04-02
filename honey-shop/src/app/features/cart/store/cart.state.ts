@@ -1,9 +1,14 @@
 import { Product } from "../../../shared/models/product.model";
 
+export interface CartItem{
+    product: Product;
+    quantity: number;
+}
+
 export interface CartState{
-    products: Product[];
+    items: CartItem[];
 }
 
 export const initialCartState: CartState = {
-    products: []
+    items: []
 };
