@@ -1,0 +1,43 @@
+<div class="checkout-page">
+  <h1>Checkout</h1>
+
+  <div class="checkout-container">
+
+    <!-- LEFT: Form for user info / payment -->
+    <div class="checkout-form">
+      <h2>Billing & Payment</h2>
+      <form (ngSubmit)="submitOrder()">
+
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Address" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="Postal Code" required>
+
+        <input type="text" placeholder="Card Number" required>
+        <div class="card-row">
+          <input type="text" placeholder="MM/YY" required>
+          <input type="text" placeholder="CVV" required>
+        </div>
+
+        <button type="submit">Pay Now</button>
+      </form>
+    </div>
+
+    <!-- RIGHT: Order summary -->
+    <div class="order-summary" *ngIf="items$ | async as items">
+      <h2>Your Order</h2>
+      <div class="summary-item" *ngFor="let item of items">
+        <img [src]="item.product.image" alt="{{item.product.name}}">
+        <div class="info">
+          <h3>{{ item.product.name }}</h3>
+          <p>Qty: {{ item.quantity }}</p>
+          <p>${{ item.product.price * item.quantity }}</p>
+        </div>
+      </div>
+      <div class="total">
+        Total: ${{ getTotal(items) }}
+      </div>
+    </div>
+
+  </div>
+</div>

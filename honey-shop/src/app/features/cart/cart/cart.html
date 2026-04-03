@@ -21,5 +21,8 @@
         <div class="total" *ngIf="items.length > 0">
             Total: ${{ getTotal(items) }}
         </div>
+        <div class="checkout" *ngIf="items.length > 0">
+            <button (click)="goToCheckout()">Proceed to Checkout</button>
+        </div>
     </div>
 </div>

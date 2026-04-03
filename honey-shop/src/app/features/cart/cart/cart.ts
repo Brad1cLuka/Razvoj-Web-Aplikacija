@@ -5,6 +5,7 @@ import { combineLatest, Observable } from 'rxjs';
 import { Product } from '../../../shared/models/product.model';
 import { CartState, CartItem } from '../store/cart.state';
 import { removeProduct } from '../store/cart.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,8 @@ export class Cart {
 
   items$: Observable<CartItem[]>;
 
-  constructor(private store: Store<{ cart: CartState}>){
+  constructor(private store: Store<{ cart: CartState}>,
+  private router: Router){
     this.items$ = this.store.select(state => state.cart.items);
   }
 
@@ -27,5 +29,9 @@ export class Cart {
 
   getTotal(items: CartItem[]): number{
     return items.reduce((sum, item) => sum+ item.product.price * item.quantity, 0);
+  }
+
+  goToCheckout() {
+  this.router.navigate(['/checkout']);
   }
 }
