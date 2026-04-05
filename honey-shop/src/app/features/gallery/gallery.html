@@ -1,0 +1,27 @@
+<section class="gallery">
+  <h1>Our Gallery</h1>
+
+  <div class="grid">
+    <div 
+      class="image-card" 
+      *ngFor="let img of images; let i = index"
+      (click)="openLightbox(i)"
+    >
+      <img [src]="img" alt="Gallery image">
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" *ngIf="selectedIndex !== null">
+  <div class="overlay" (click)="close()"></div>
+
+  <div class="lightbox-content">
+    <button class="close" (click)="close()">✕</button>
+
+    <button class="prev" (click)="prev()">❮</button>
+
+    <img [src]="images[selectedIndex]" alt="Preview">
+
+    <button class="next" (click)="next()">❯</button>
+  </div>
+</div>

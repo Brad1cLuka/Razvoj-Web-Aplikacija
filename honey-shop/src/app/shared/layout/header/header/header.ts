@@ -21,4 +21,8 @@ export class Header {
       map(items => items.reduce((sum, item) => sum + item.quantity, 0))
     )
   }
+
+  scrollTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
