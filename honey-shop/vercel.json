@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/honey-shop",
+  "buildCommand": "ng build",
+  "outputDirectory": "dist/honey-shop/browser",
   "rewrites": [
     {
       "source": "/(.*)",
