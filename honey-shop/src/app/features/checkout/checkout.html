@@ -1,41 +1,41 @@
 <div class="checkout-page">
-  <h1>Checkout</h1>
+  <h1>Završetak kupovine</h1>
 
   <div class="checkout-container">
 
     <!-- LEFT: Form for user info / payment -->
     <div class="checkout-form">
-      <h2>Billing & Payment</h2>
+      <h2>Podaci za naplatu i plaćanje</h2>
       <form (ngSubmit)="submitOrder()">
 
-        <input type="text" placeholder="Full Name" required>
-        <input type="text" placeholder="Address" required>
-        <input type="text" placeholder="City" required>
-        <input type="text" placeholder="Postal Code" required>
+        <input type="text" placeholder="Puno ime i prezime" required>
+        <input type="text" placeholder="Adresa" required>
+        <input type="text" placeholder="Grad" required>
+        <input type="text" placeholder="Poštanski broj" required>
 
-        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Broj kartice" required>
         <div class="card-row">
-          <input type="text" placeholder="MM/YY" required>
+          <input type="text" placeholder="MM/GG" required>
           <input type="text" placeholder="CVV" required>
         </div>
 
-        <button type="submit">Pay Now</button>
+        <button type="submit">Plati odmah</button>
       </form>
     </div>
 
     <!-- RIGHT: Order summary -->
     <div class="order-summary" *ngIf="items$ | async as items">
-      <h2>Your Order</h2>
+      <h2>Vaša porudžbina</h2>
       <div class="summary-item" *ngFor="let item of items">
         <img [src]="item.product.image" alt="{{item.product.name}}">
         <div class="info">
           <h3>{{ item.product.name }}</h3>
-          <p>Qty: {{ item.quantity }}</p>
-          <p>${{ item.product.price * item.quantity }}</p>
+          <p>Količina: {{ item.quantity }}</p>
+          <p>€{{ item.product.price * item.quantity }}</p>
         </div>
       </div>
       <div class="total">
-        Total: ${{ getTotal(items) }}
+        Ukupno: €{{ getTotal(items) }}
       </div>
     </div>
 

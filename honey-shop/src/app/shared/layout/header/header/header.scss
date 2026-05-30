@@ -25,7 +25,7 @@
         gap: 40px;
 
         a{
-            color:white;
+            color: white;
             text-decoration: none;
             font-weight: bold;
             position: relative;
@@ -37,50 +37,80 @@
                 position: absolute;
                 width: 0;
                 height: 2px;
-                background:white;
+                background: white;
                 left: 0;
                 bottom: 0;
                 transition: width 0.3s ease;
             }
+
             &:hover::after{
                 width: 100%;
             }
+
             &:active{
                 transform: scale(0.95);
                 transition: transform 0.1s;
             }
         }
     }
+
+    /* ================= CART ================= */
+
     .cart-link{
         position: relative;
         display: flex;
         align-items: center;
-        background:orange;
+        justify-content: center;
+
+        background: orange;
         color: white;
-        padding: 8px 16px;
-        border-radius: 25px;
+
+        padding: 10px 28px;
+
+        border-radius: 999px;
+
         font-weight: bold;
         text-decoration: none;
-        gap: 6px;
+        gap: 10px;
+
         transition: background 0.2s;
         border: 0.5px solid white;
 
-        &:hover {
-            background: #c7673b;
+        /* 🔥 ključ stabilnosti kad nema badge-a */
+        min-width: 120px;
+        white-space: nowrap;
+
+        /* uklanja underline */
+        &::after{
+            content: none !important;
         }
-        .cart-icon{
-            font-size: 20px;
-        }
-        .badge{
-            position: absolute;
-            top: -8px;
-            right: -10px;
-            background: red;
-            color: white;
-            font-size: 12px;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-weight: bold;
-        }
+    }
+
+    /* sigurnosni override */
+    nav a.cart-link::after{
+        content: none !important;
+    }
+
+    .cart-link:hover {
+        background: #c7673b;
+    }
+
+    .cart-icon{
+        font-size: 20px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .cart-link .badge{
+        position: absolute;
+        top: -8px;
+        right: -8px;
+
+        background: red;
+        color: white;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-weight: bold;
     }
 }

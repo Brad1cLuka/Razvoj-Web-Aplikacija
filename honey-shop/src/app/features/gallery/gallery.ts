@@ -9,14 +9,14 @@ import { Component, HostListener } from '@angular/core';
 })
 export class Gallery {
    images = [
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png',
-    '/assets/products/placeholder.png'
+    '/assets/products/placeholder1.png',
+    '/assets/products/placeholder2.png',
+    '/assets/products/placeholder3.png',
+    '/assets/products/placeholder1.png',
+    '/assets/products/placeholder2.png',
+    '/assets/products/placeholder3.png',
+    '/assets/products/placeholder1.png',
+    '/assets/products/placeholder2.png'
   ];
 
   selectedIndex: number | null = null;

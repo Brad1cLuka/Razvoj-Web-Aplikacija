@@ -1,16 +1,16 @@
 <div class="page-title">
-  <h1>Contact Us</h1>
-  <p>We’d love to hear from you 📩</p>
+  <h1>Kontaktirajte nas</h1>
+  <p>Voleli bismo da čujemo Vaše mišljenje 📩</p>
 </div>
 
 <section class="contact-container">
 
   <div class="contact-info">
-    <h2>Get in Touch</h2>
-    <p>Ask anything about our honey 🍯</p>
+    <h2>Stupite u kontakt sa nama</h2>
+    <p>Pitajte nas bilo šta o našem medu 🍯</p>
 
     <p><strong>Email:</strong> info@honey-shop.com</p>
-    <p><strong>Phone:</strong> +381 60 123 456</p>
+    <p><strong>Telefon:</strong> +381 60 123 456</p>
   </div>
 
   <form class="contact-form" (ngSubmit)="submitForm(form)" #form="ngForm">
@@ -18,50 +18,50 @@
     <input 
       type="text" 
       name="name" 
-      placeholder="Your Name"
+      placeholder="Vaše ime"
       [(ngModel)]="formData.name"
       required
       #name="ngModel"
     >
     <div class="error" *ngIf="name.invalid && name.touched">
-      Name is required
+      Ime je obavezno
     </div>
 
     <input 
       type="email" 
       name="email" 
-      placeholder="Your Email"
+      placeholder="Vaša email adresa"
       [(ngModel)]="formData.email"
       required
       email
       #email="ngModel"
     >
     <div class="error" *ngIf="email.invalid && email.touched">
-      Enter a valid email
+      Unesite ispravnu email adresu
     </div>
 
     <textarea 
       name="message" 
       rows="5"
-      placeholder="Your Message"
+      placeholder="Vaša poruka"
       [(ngModel)]="formData.message"
       required
       #message="ngModel"
     ></textarea>
     <div class="error" *ngIf="message.invalid && message.touched">
-      Message is required
+      Poruka je obavezna
     </div>
 
     <button type="submit" [disabled]="loading || form.invalid">
       
-      <span *ngIf="!loading">Send Message</span>
+      <span *ngIf="!loading">Pošalji poruku</span>
 
       <span *ngIf="loading" class="spinner"></span>
 
     </button>
 
     <p class="success" *ngIf="successMessage">
-      ✅ Message sent successfully!
+      ✅ Poruka je uspešno poslata!
     </p>
 
   </form>

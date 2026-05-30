@@ -4,15 +4,15 @@
     </a>
 
     <nav>
-        <a routerLink="/" (click)="scrollTop()">Home</a>
-        <a routerLink="/products" (click)="scrollTop()">Products</a>
-        <a routerLink="/about" (click)="scrollTop()">About us</a>
-        <a routerLink="/gallery" (click)="scrollTop()">Gallery</a>
-        <a routerLink="/contact"(click)="scrollTop()">Contact</a>
+        <a routerLink="/" (click)="scrollTop()">Početna</a>
+        <a routerLink="/products" (click)="scrollTop()">Proizvodi</a>
+        <a routerLink="/about" (click)="scrollTop()">O nama</a>
+        <a routerLink="/gallery" (click)="scrollTop()">Galerija</a>
+        <a routerLink="/contact"(click)="scrollTop()">Kontakt</a>
 
         
         <a routerLink="/cart" class="cart-link">
-            <span class="cart-icon">Cart🛒</span>
+            <span class="cart-icon">  Korpa🛒  </span>
 
             <span class="badge" *ngIf="(cartCount$ | async) as count">
                 {{count> 100 ? '100+' : count}}
