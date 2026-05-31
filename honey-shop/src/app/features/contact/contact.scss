@@ -62,6 +62,8 @@
     outline: none;
     transition: all 0.2s;
     background: white;
+    width: 100%;
+    box-sizing: border-box;
 
     &:focus {
       border-color: orange;
@@ -135,21 +137,101 @@
   }
 }
 
-@media (max-width: 768px) {
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
   .contact-container {
-    flex-direction: column;
-    padding: 40px 20px;
+    gap: 40px;
+    padding: 30px;
   }
 
-  .contact-hero {
-    height: 40vh;
+  .page-title h1 {
+    font-size: 34px;
+  }
+}
 
-    .hero-content h1 {
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .page-title {
+    padding: 25px 15px;
+
+    h1 {
       font-size: 2rem;
+      line-height: 1.2;
     }
 
-    .hero-content p {
+    p {
       font-size: 1rem;
     }
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .contact-info {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+
+    input,
+    textarea {
+      font-size: 16px; // sprečava zoom na iPhone-u
+      padding: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+    }
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 480px) {
+
+  .page-title {
+    border-radius: 10px;
+
+    h1 {
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+
+  .contact-form {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .contact-info h2 {
+    font-size: 22px;
   }
 }

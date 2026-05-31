@@ -16,13 +16,26 @@ export class Header {
 
   cartCount$: Observable<number>;
 
-  constructor(private store: Store<{ cart: CartState}>){
-    this.cartCount$ = this.store.select(state=> state.cart.items).pipe(
+  menuOpen = false;
+
+  constructor(private store: Store<{ cart: CartState }>) {
+    this.cartCount$ = this.store.select(state => state.cart.items).pipe(
       map(items => items.reduce((sum, item) => sum + item.quantity, 0))
-    )
+    );
   }
 
   scrollTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }

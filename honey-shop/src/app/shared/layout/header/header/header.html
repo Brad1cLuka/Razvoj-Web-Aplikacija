@@ -3,19 +3,28 @@
         <img src="/assets/products/logo.png" alt="Honey shop logo">
     </a>
 
-    <nav>
-        <a routerLink="/" (click)="scrollTop()">Početna</a>
-        <a routerLink="/products" (click)="scrollTop()">Proizvodi</a>
-        <a routerLink="/about" (click)="scrollTop()">O nama</a>
-        <a routerLink="/gallery" (click)="scrollTop()">Galerija</a>
-        <a routerLink="/contact"(click)="scrollTop()">Kontakt</a>
+    <button class="burger"
+            (click)="toggleMenu()"
+            [class.active]="menuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-        
-        <a routerLink="/cart" class="cart-link">
-            <span class="cart-icon">  Korpa🛒  </span>
+    <nav [class.mobile-open]="menuOpen">
+        <a routerLink="/" (click)="scrollTop(); closeMenu()">Početna</a>
+        <a routerLink="/products" (click)="scrollTop(); closeMenu()">Proizvodi</a>
+        <a routerLink="/about" (click)="scrollTop(); closeMenu()">O nama</a>
+        <a routerLink="/gallery" (click)="scrollTop(); closeMenu()">Galerija</a>
+        <a routerLink="/contact" (click)="scrollTop(); closeMenu()">Kontakt</a>
+
+        <a routerLink="/cart"
+           class="cart-link"
+           (click)="closeMenu()">
+            <span class="cart-icon">Korpa🛒</span>
 
             <span class="badge" *ngIf="(cartCount$ | async) as count">
-                {{count> 100 ? '100+' : count}}
+                {{count > 100 ? '100+' : count}}
             </span>
         </a>
     </nav>
